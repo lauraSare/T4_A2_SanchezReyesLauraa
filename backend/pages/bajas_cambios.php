@@ -44,34 +44,15 @@
             background-color: #f2f2f2;
         }
 
-        /* Estilo de los botones de acción */
-        .action-buttons a {
+        /* Estilo del botón de eliminar */
+        .action-buttons .eliminar {
             margin: 0 5px;
             text-decoration: none;
             color: #fff;
             padding: 5px 10px;
             border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .action-buttons .detalle {
-            background-color: #8C3061;
-        }
-
-        .action-buttons .detalle:hover {
-            background-color: #6d254b;
-        }
-
-        .action-buttons .editar {
-            background-color: #4CAF50;
-        }
-
-        .action-buttons .editar:hover {
-            background-color: #45a049;
-        }
-
-        .action-buttons .eliminar {
             background-color: #f44336;
+            transition: background-color 0.3s;
         }
 
         .action-buttons .eliminar:hover {
@@ -117,8 +98,6 @@
                     <td>".$fila['Semestre']."</td> 
                     <td>".$fila['Carrera']."</td> 
                     <td class='action-buttons'>  
-                        <a href='#' class='detalle'><i class='fas fa-info-circle'></i> Detalle</a>
-                        <a href='#' class='editar'><i class='fas fa-edit'></i> Editar</a>
                         <a href='../controllers/procesar_bajas.php?nc=%s' class='eliminar'><i class='fas fa-trash-alt'></i> Eliminar</a>
                     </td>
                 </tr>",

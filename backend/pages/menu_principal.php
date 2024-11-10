@@ -1,9 +1,13 @@
 <?php
-session_start();
-if (!$_SESSION['Valida'])
+// Solo inicia la sesión si no hay una activa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!$_SESSION['Valida']) {
     header('Location: login.php');
+    exit(); 
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

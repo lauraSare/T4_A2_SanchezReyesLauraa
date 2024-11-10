@@ -13,7 +13,6 @@ if(isset($num_control) && !empty($num_control) && is_numeric($num_control)){
 
     }
 
-
  //3. (PENDIENTE) validar que no exista previamente
  //4. Enviarlo al controlador
 
@@ -26,10 +25,6 @@ if(isset($num_control) && !empty($num_control) && is_numeric($num_control)){
     echo "MEJOR ME DEDICO A LAS REDES =(";
 
     }
-
-
-
-
 
  //5. Insertar en BD un OBJECTO DEL MODELO ALUMNO
 

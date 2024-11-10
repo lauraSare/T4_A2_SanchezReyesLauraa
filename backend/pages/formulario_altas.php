@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Alumnos</title>
     <style>
-        /* Estilo del contenedor del formulario */
         .form-container {
             width: 90%;
             margin: 0 auto;
@@ -15,7 +14,6 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilo de la tabla */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -37,7 +35,6 @@
             background-color: #f2f2f2;
         }
 
-        /* Estilo del botón de agregar */
         .btn-agregar {
             background-color: #8C3061;
             color: white;
@@ -52,10 +49,17 @@
             background-color: #6d254b;
         }
 
-        /* Centrar el botón */
         .button-container {
             display: flex;
             justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Estilo para el mensaje de éxito */
+        .message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
             margin-top: 20px;
         }
     </style>
@@ -64,10 +68,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<?php require_once('menu_principal.php'); ?>
+<?php
+require_once('menu_principal.php');
+$mensaje = '';
+
+// Verifica si el formulario fue enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include '../controllers/procesar_altas.php'; 
+
+    $mensaje = "¡Registro agregado correctamente!";
+}
+?>
 
 <div class="form-container">
-    <form action="../controllers/procesar_altas.php" method="post" class="row g-3">
+    <?php if ($mensaje): ?>
+        <div class="message"><?php echo $mensaje; ?></div>
+    <?php endif; ?>
+
+    <form action="" method="post" class="row g-3">
         <div class="col-md-6">
             <label for="caja_num_control" class="form-label">Número de Control</label>
             <input type="text" class="form-control" id="caja_num_control" name="caja_num_control" placeholder="Solo números" maxlength="10" required>

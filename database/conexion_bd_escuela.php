@@ -1,6 +1,5 @@
 <?php
 
-
  class ConexionBDEscuela{
     private $conexion;
     private $host = "localhost:3306";
