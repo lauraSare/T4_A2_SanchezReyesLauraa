@@ -8,7 +8,6 @@ $password = isset($_POST['password']) ? $_POST['password'] : '';
 // proceso de validación
 
 // proceso de verificación de usuario y contraseña en la base de datos
-
 include_once('../../database/conexion_bd_usuarios.php');
 
 $con = new ConexionBDUsuarios();
